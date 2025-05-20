@@ -1082,7 +1082,7 @@ footer {
     }
 
     .mobile-button {
-        display: block;
+        display: none;
         margin-top: 10px;
     }
 
