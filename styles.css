@@ -15,16 +15,17 @@ body {
     font-family: inter;
 }
 
- button {
-        background-color: #f53809d8;
-        border: none;
-        padding: 16px 24px;
-        border-radius: 30px;
-        font-size: 1rem;
-        color: #ffffff;
-        margin-top: 20px;
-        cursor: pointer;
-    }
+button {
+    background-color: #f53809d8;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
 .main-container {
     width: 100%;
     height: auto;
@@ -33,29 +34,43 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 /* Base styles */
 .navbar {
     display: flex;
-    gap: 50px;
     width: 100%;
     height: 100px;
     padding: 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: black;
     color: white;
     position: fixed;
     z-index: 100;
     top: 0;
+
+    .button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    width: 100px;
 }
 
 .nav-links {
+    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 20px;
     list-style-type: none;
     font-size: 1rem;
@@ -96,7 +111,7 @@ body {
 .hero-container {
     width: 100%;
     height: 400px;
-    padding: 50px;
+    padding: 50px 0;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -110,28 +125,43 @@ body {
     color: #ffffff;
     font-weight: 800;
     position: absolute;
-    top: 500px;
+    top: 700px;
     }
 
     .hero-content {
-       width: 100%;
-        display: flex;
+        width: 100%;
+        display: flex; 
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         padding: 50px;
+        gap: 50px;
 
         .image {
-            width: 500px;
-            height: 500px;
-            padding: 100px 0;
+            width: 100%;
+            height: 700px;
             overflow: hidden;
+            background-image: url(./heroimg.png);
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 600px;
+            background-size: cover;
+            -webkit-mask-image: radial-gradient(farthest-side at center 20%, black 80%, transparent 100%),
+                      linear-gradient(to right, transparent 0%, black 20%, black 100%, transparent 100%),
+                      linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+            -webkit-mask-composite: intersect;
+            mask-image: radial-gradient(farthest-side at center 30%, black 80%, transparent 100%),
+                        linear-gradient(to right, transparent 0%, black 20%, black 100%, transparent 100%),
+                        linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+            mask-composite: intersect;
         }
 
         .text-container {
-            width: 500px;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  
+            align-items: flex-end;          
 
             .availability {
                 width: 200px;
@@ -154,16 +184,31 @@ body {
 
             .sub-heading {
                 color: #ffffff;
+                width: 100%;
+                text-align: end;
+
+                p{
                 font-size: 2rem;
-                width: 400px;
+                font-weight: 700;
+                
+                }
             }
         }
         .head-p {
             color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
-            padding: 20px 0;
-            word-wrap: break-word;
+            padding: 20px;
+            
+            p {
+                width: 500px;
+                word-wrap: break-word;
+                font-size: 1.4rem;
+            }
         }
+
     }
     button {
         background-color: #f53809d8;
@@ -176,6 +221,16 @@ body {
         cursor: pointer;
     }
 } 
+
+.content-container{
+    width: 100%;
+    padding: 0 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .banner {
@@ -243,15 +298,15 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
-    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
-
+    flex-wrap: wrap; 
 
     .text {
-        width: 650px;
+        width: 500px;
         font-size: 1rem;
         line-height: 20px;
         color: white;
-        flex: 1; /* Ensures that the text section is flexible and can adjust */
+        flex: 1; 
+        padding: 0 20px;
     }
 
     .heading {
@@ -511,6 +566,80 @@ footer {
     .event-box .image {
         height: 180px;
     }
+    }
+
+    .services-container {
+        width: 100%;
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: none;
+        background: black;
+    }
+    .service-content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .services-container
+        .content-box {
+        grid-template-columns: repeat(2, 300px);
+        font-size: 1rem;
+    }
+    #box p {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    #box:hover {
+    transform: scale(1.05); 
+    }
+
+    .services-container button {
+        width: 150px;
+        font-size: 0.9rem;
+    }
+
+    .services-container .heading {
+        font-size: 3rem;
+        padding: 10px;
+    }
+    
+    .events-container {
+        padding: 60px 20px;
+        flex-direction: column;
+
+    .heading {
+        font-size: 2.5rem;
+        line-height: 40px;
+    }
+
+    .event-content {
+        grid-template-columns: repeat(2, 300px);
+        gap: 30px;
+    }
+
+    #box {
+        width: 100%;
+        height: 250px;
+    }
+
+    #box img {
+        aspect-ratio: 1/1;
+    }
+
+    .headed-content button {
+        width: 100%;
+    }
+    }
+
+    #archieves {
+        flex-direction: column-reverse;
+
+        .heading {
+            text-align: center;
+        }
     }
 }
 
